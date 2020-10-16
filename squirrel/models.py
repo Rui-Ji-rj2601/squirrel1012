@@ -19,8 +19,8 @@ class Squirrel(models.Model):
     PM = 'PM'
 
     SHIFT_CHOICE = [
-        (AM, _('Morning')),
-        (PM, _('Afternoon')),
+        (AM, _('AM')),
+        (PM, _('PM')),
     ]
 
     Shift = models.CharField(
@@ -45,9 +45,11 @@ class Squirrel(models.Model):
         max_length=15,
         help_text=_('Age of the squirrel'),
         choices=AGE_CHOICE,
-        null=True
+        null=True,
+        blank=True,
     )
 
-    
+    def __str__(self):
+        return self.Unique_Squirrel_ID
 
 # Create your models here.
