@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
     Latitude = models.FloatField(
-        help_text=_('measure in North and South')        
+        help_text=_('measure in North and South')
     )
 
     Longitude = models.FloatField(
@@ -30,7 +30,7 @@ class Squirrel(models.Model):
     )
 
     Date = models.DateField(
-        help_text=_('pass in date object')        
+        help_text=_('pass in date object')
     )
 
     ADULT = 'Adult'
