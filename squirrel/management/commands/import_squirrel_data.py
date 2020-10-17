@@ -19,8 +19,8 @@ class Command(BaseCommand):
 
             for item in reader:
                 obj = Squirrel(
-                    Latitude=item['X'],
-                    Longitude=item['Y'],
+                    Latitude=item['Y'],
+                    Longitude=item['X'],
                     Unique_Squirrel_ID=item['Unique Squirrel ID'],
                     Shift=item['Shift'],
                     Date=datetime.date(int(item['Date'][-4:]),int(item['Date'][:2]), int(item['Date'][2:4])),
