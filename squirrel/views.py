@@ -52,22 +52,17 @@ def map(request):
     }
     return render(request, 'squirrel/map.html', context)
 
-
-    '''
+def add(request):
     if request.method == 'POST':
         form = squirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('squirrel:index')
+        return redirect('/sightings/')
 
     else:
         form = squirrelForm()
-
-    context = {
-        'form': form,
-    }
-    return render(request, 'squirrel/add.html', context)
-    '''
+        context = {'form': form,}
+        return render(request, 'squirrel/add.html', context)
 
 
 
