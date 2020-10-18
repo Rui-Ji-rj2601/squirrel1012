@@ -46,9 +46,9 @@ def stats(request):
     return render(request, 'squirrel/stats.html', context)
 
 def map(request):
-    sightings=squirrel.objects.all()
+    sighting=Squirrel.objects.all()
     context = {
-        'sightings': sightings,
+        'sighting': sighting,
     }
     return render(request, 'squirrel/map.html', context)
 
