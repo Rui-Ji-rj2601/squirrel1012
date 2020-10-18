@@ -3,10 +3,15 @@
 	<body>
 		<ul>
 		{% for squirrel in squirrels %}
-			<li> {{ squirrel }} </li>
-			<li> {{ squirrel.Date }} </li>
-
-
+			<li>
+				<div>
+					{{ squirrel.Unique_Squirrel_ID }}
+				</div>
+				<div>
+					{{ squirrel.Date }}
+				</div>
+				<a href='{{ squirrel.Unique_Squirrel_ID }}'>update</a>
+			</li>
 		{% endfor %}
 	  </ul>
 	</body>

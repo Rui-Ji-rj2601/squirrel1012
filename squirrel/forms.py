@@ -1,9 +1,9 @@
 from django.forms import ModelForm
 from .models import Squirrel
 
-Class squirrelForm(ModelForm):
+class squirrelForm(ModelForm):
     class Meta:
-        model = squirrel
+        model = Squirrel
         fields = ['Latitude','Longitude','Unique_Squirrel_ID','Shift','Date','Age']
 
     # Latitude=forms.FloatField()
