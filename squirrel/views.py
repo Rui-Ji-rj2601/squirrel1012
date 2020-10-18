@@ -45,6 +45,14 @@ def stats(request):
     }
     return render(request, 'squirrel/stats.html', context)
 
+def map(request):
+    sightings=squirrel.objects.all()
+    context = {
+        'sightings': sightings,
+    }
+    return render(request, 'squirrel/map.html', context)
+
+
     '''
     if request.method == 'POST':
         form = squirrelForm(request.POST)
