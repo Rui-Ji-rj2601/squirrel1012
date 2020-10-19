@@ -54,7 +54,7 @@
         var count = 0;
         {% for sighting in sightings %}
           count += 1
-          if (count < 100)
+          if (count <= 100)
           var point_lat_lon = [{{ sighting.Latitude }}, {{ sighting.Longitude }}];
           var marker = L.marker(point_lat_lon).addTo(map);
         {% endfor %}

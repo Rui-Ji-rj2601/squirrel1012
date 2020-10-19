@@ -15,8 +15,6 @@ def index(request):
     }
     return render(request, 'squirrel/index.html', context)
 
-
-
 #def detail (request, squirrel_id)
 def update(request, squirrel_id):
     obj = get_object_or_404(Squirrel, Unique_Squirrel_ID=squirrel_id)
