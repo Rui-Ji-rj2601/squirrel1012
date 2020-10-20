@@ -1,6 +1,9 @@
+import csv
+
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.http import HttpResponse
 
 from .models import Squirrel
 from .forms import squirrelForm
@@ -61,6 +64,19 @@ def add(request):
         form = squirrelForm()
         context = {'form': form,}
         return render(request, 'squirrel/add.html', context)
+
+def export(request):
+    response=HttpResponse(content_type='text/csv')
+    writer=csv.writer(response)
+    writer.writerow(['Latitude','Longitude','Unique_Squirrel_ID','Shift','Date','Age'])
+
+    for squirrels in Squirrel.objects.all().values_list('Latitude','Longitude','Unique_Squirrel_ID','Shift','Date','Age'):
+        writer.writerow(squirrels)
+        response['Content-Disposition']='attachment;filename="Squirrels.csv"'
+        return response
+
+
+
 
 
 
