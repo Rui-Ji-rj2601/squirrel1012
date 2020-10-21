@@ -47,10 +47,15 @@ def stats(request):
     return render(request, 'squirrel/stats.html', context)
 
 def map(request):
-    sighting=Squirrel.objects.all()
-    context = {
-        'sighting': sighting,
-    }
+
+    sightings=Squirrel.objects.all()
+    squirrel_show=[]
+    for i in range (100):
+        squirrel_show.append(sightings)
+        sightings=squirrel_show
+        context = {
+            'sightings': sightings,
+        }
     return render(request, 'squirrel/map.html', context)
 
 def add(request):
