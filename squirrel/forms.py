@@ -4,6 +4,11 @@ from .models import Squirrel
 class squirrelForm(ModelForm):
     class Meta:
         model = Squirrel
+        fields = '__all__'
+
+class PartialForm(ModelForm):
+    class Meta:
+        model = Squirrel
         fields = ['Latitude','Longitude','Unique_Squirrel_ID','Shift','Date','Age']
 
     # Latitude=forms.FloatField()

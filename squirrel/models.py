@@ -2,9 +2,9 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
-    Latitude = models.FloatField()
-
     Longitude = models.FloatField()
+
+    Latitude = models.FloatField()
 
     Unique_Squirrel_ID = models.CharField(
         max_length=20,
@@ -41,6 +41,45 @@ class Squirrel(models.Model):
         null=True,
         blank=True,
     )
+
+    Primary_Fur_Color = models.CharField(
+        max_length=15,
+        null=True,
+        blank=True,
+    )
+
+    Location = models.CharField(
+        max_length=15,
+        null=True,
+        blank=True,
+    )
+
+    Specific_Location = models.CharField(
+        max_length=45,
+        null=True,
+        blank=True,
+    )
+
+    Running = models.BooleanField(default=False)
+    Chasing = models.BooleanField(default=False)
+    Climbing = models.BooleanField(default=False)
+    Eating = models.BooleanField(default=False)
+    Foraging = models.BooleanField(default=False)
+
+    Other_Activities = models.CharField(
+        max_length=30,
+        null=True,
+        blank=True,
+    )
+
+    Kuks = models.BooleanField(default=False)
+    Quaas = models.BooleanField(default=False)
+    Moans = models.BooleanField(default=False)
+    Tail_flags = models.BooleanField(default=False)
+    Tail_twitches = models.BooleanField(default=False)
+    Approaches = models.BooleanField(default=False)
+    Indifferent = models.BooleanField(default=False)
+    Runs_from = models.BooleanField(default=False)
 
     def __str__(self):
         return self.Unique_Squirrel_ID

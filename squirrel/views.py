@@ -7,6 +7,7 @@ from django.http import HttpResponse
 
 from .models import Squirrel
 from .forms import squirrelForm
+from .forms import PartialForm
 
 def home(request):
     return render(request, 'squirrel/home.html')
@@ -21,7 +22,7 @@ def index(request):
 #def detail (request, squirrel_id)
 def update(request, squirrel_id):
     obj = get_object_or_404(Squirrel, Unique_Squirrel_ID=squirrel_id)
-    form = squirrelForm(request.POST or None, instance=obj)
+    form = PartialForm(request.POST or None, instance=obj)
     context = {'form': form}
     if form.is_valid():
         obj = form.save(commit=False)
