@@ -1,11 +1,24 @@
 <!doctype html>
 <html>
-  <body>
+  <head>
+    <title>Add New</title>
+  </head>
+  <body style="background-color:lavenderblush;">
+    <h1>Add a New Squirrel Sighting to the Database</h1>
     <form action="." method="post">
       {% csrf_token %}
-      {{ form }}
-      <input type="submit" value="Submit">
+      <ul>
+        <li>Latitude: {{form.Latitude}}</li>
+        <li>Longitude: {{form.Longitude}}</li>
+        <li>Unique_Squirrel_ID: {{form.Unique_Squirrel_ID}}</li>
+        <li>Shift: {{form.Shift}}</li>
+        <li>Date: {{form.Date}}</li>
+        <li>Age: {{form.Age}}</li>
+      </ul>
+      <div><input type="submit" value="Submit"></div>
     </form>
-    <a href='/sightings/'> Back to the List Page</a>
+    <p></p>
+    <div><a href='/sightings/'> Back to Squirrel List</a></div>
+    <div><a href='/' class=''>Back to Homepage</a></div>
   </body>
 </html>

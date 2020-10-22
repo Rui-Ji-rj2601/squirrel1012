@@ -1,21 +1,40 @@
 <!doctype html>
 <html>
-	<body>
-		<ul>
-			<li><a href='/sightings/stats/' class=''>Stats of Squirrels</a></li>
-			<li><a href='/sightings/add/' class=''>Add a New Squirrels</a></li>
-			<li><a href='/' class=''>Back to Homepage</a></li>
-		{% for squirrel in squirrels %}
-			<li>
-				<div>
-					{{ squirrel.Unique_Squirrel_ID }}
-				</div>
-				<div>
-					{{ squirrel.Date }}
-				</div>
-				<a href='{{ squirrel.Unique_Squirrel_ID }}'>update</a>
-			</li>
-		{% endfor %}
-	  </ul>
+	<head>
+		<title>Squirrel List</title>
+	</head>
+	<body style="background-color:lavenderblush;">
+		<div>
+			<h2>Links to Other Pages</h2>
+			<p>Go to "Stats of All Squirrels" for a Statistical Summary of squirrels in the current database</p>
+			<ul>
+				<li><a href='/sightings/stats/' class=''>Stats of All Squirrels</a></li>
+			</ul>
+			<p>Go to "Add New Squirrels" to add a customized squirrel instance</p>
+			<ul>
+				<li><a href='/sightings/add/' class=''>Add New Squirrels</a></li>
+			</ul>
+			<p>Click here to go back to Homepage</p>
+			<ul>
+				<li><a href='/' class=''>Back to Homepage</a></li>
+			</ul>
+			<h1>List of Squirrels</h1>
+			<p>Each bullet point represents a squirrel instance</p>
+			<p>The Unique Squirrel ID, Date of Sightings, and a link to update the instance are provided</p>
+			<p>The "Update This Squirrel" link will redirect to the page where you can change some information of the specific squirrel sighting</p>
+			<ul>
+				{% for squirrel in squirrels %}
+					<li>
+						<div>
+							{{ squirrel.Unique_Squirrel_ID }}
+						</div>
+						<div>
+							{{ squirrel.Date }}
+						</div>
+						<a href='{{ squirrel.Unique_Squirrel_ID }}'>Update This Squirrel</a>
+					</li>
+				{% endfor %}
+		  </ul>
+		</div>
 	</body>
 </html>
