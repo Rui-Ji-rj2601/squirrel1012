@@ -3,22 +3,33 @@
   <head>
     <title>Add New</title>
   </head>
+  <style>
+    li {margin: 15px;}
+    div {margin: 15px;}
+    body{
+     background-image: url('https://images.theconversation.com/files/334473/original/file-20200512-82357-11i5o76.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop');
+     background-size: cover;
+     color: white;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+   }
+  </style>
   <body style="background-color:lavenderblush;">
-    <h1>Add a New Squirrel Sighting to the Database</h1>
+    <h1 style="font-size:40px;">Add a New Squirrel Sighting to the Database</h1>
     <form action="." method="post">
       {% csrf_token %}
       <ul>
-        <li>Latitude: {{form.Latitude}}</li>
-        <li>Longitude: {{form.Longitude}}</li>
-        <li>Unique_Squirrel_ID: {{form.Unique_Squirrel_ID}}</li>
-        <li>Shift: {{form.Shift}}</li>
-        <li>Date: {{form.Date}}</li>
-        <li>Age: {{form.Age}}</li>
+        <li style="font-size:25px;">Latitude: {{form.Latitude}}</li>
+        <li style="font-size:25px;">Longitude: {{form.Longitude}}</li>
+        <li style="font-size:25px;">Unique_Squirrel_ID: {{form.Unique_Squirrel_ID}}</li>
+        <li style="font-size:25px;">Shift: {{form.Shift}}</li>
+        <li style="font-size:25px;">Date: {{form.Date}}</li>
+        <li style="font-size:25px;">Age: {{form.Age}}</li>
       </ul>
-      <div><input type="submit" value="Submit"></div>
+      <div><input type="submit" value="Submit" style="font-size:25px;"></div>
     </form>
     <p></p>
-    <div><a href='/sightings/'> Back to Squirrel List</a></div>
-    <div><a href='/' class=''>Back to Homepage</a></div>
+    <div><a href='/sightings/' style="color:white;font-size:25px;"> Back to Squirrel List</a></div>
+    <div><a href='/' class='' style="color:white;font-size:25px;">Back to Homepage</a></div>
   </body>
 </html>
