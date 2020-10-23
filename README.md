@@ -1,3 +1,8 @@
+Group name and Section: 
+Rui & Minxin, Section 001
+Group Member UNI: 
+UNIs:[rj2601, mz2820]
+
 # squirrel1012 - October 2020
 Author Name: Rui Ji (rj2601) and Minxin Zhang (mz2820)
 Project for E4501 Tools for Analytics - Fall A 2020 - Columbia University - IEOR
